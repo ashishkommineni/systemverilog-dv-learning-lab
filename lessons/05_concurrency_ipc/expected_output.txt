@@ -1,0 +1,9 @@
+processes_demo
+  worker_0 complete
+  worker_1 complete
+  completed=2 winner=1 background=1
+  processes_demo: PASS
+
+ipc_demo
+  sum=15 event_observed=1
+  ipc_demo: PASS
