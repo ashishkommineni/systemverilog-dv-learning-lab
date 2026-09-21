@@ -1,0 +1,10 @@
+Portable smoke:
+  load, increment, wrap, hold: checked
+  counter_portable_smoke: PASS
+
+Full Xcelium environment:
+  matches=24 mismatches=0 coverage=<tool-computed percentage>%
+  tb_top: PASS
+
+Random values and the coverage percentage may vary between simulator versions.
+The pass criteria are 24 matches, zero mismatches, and no assertion failures.
