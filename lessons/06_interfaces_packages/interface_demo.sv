@@ -33,8 +33,18 @@ interface counter_if(input logic clk);
     output value
   );
 
-  modport driver (clocking driver_cb);
-  modport monitor (clocking monitor_cb);
+  // Signal-direction modports remain portable across older open-source
+  // simulators. The separate Xcelium example demonstrates a modport that
+  // directly exports a clocking block.
+  modport driver (
+    input  clk,
+    output rst_n, enable,
+    input  value
+  );
+
+  modport monitor (
+    input clk, rst_n, enable, value
+  );
 endinterface
 
 module tiny_counter(counter_if.dut bus);
