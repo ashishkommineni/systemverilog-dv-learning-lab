@@ -1,0 +1,6 @@
+interface_demo
+  counter_value=3
+  interface_demo: PASS
+
+virtual_interface_demo
+  virtual_interface_demo: PASS
