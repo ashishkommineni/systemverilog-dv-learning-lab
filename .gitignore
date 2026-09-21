@@ -1,0 +1,31 @@
+# Simulator outputs
+build/
+obj_dir/
+work/
+xcelium.d/
+INCA_libs/
+simv*
+csrc/
+
+# Logs, waveforms, and coverage databases
+*.log
+*.vcd
+*.fst
+*.wlf
+*.shm
+*.key
+*.ucd
+*.vdb
+coverage/
+
+# Editor and backup files
+*~
+*.bak
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
