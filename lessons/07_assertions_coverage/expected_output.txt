@@ -1,0 +1,10 @@
+assertions_demo
+  handshakes=2
+  assertions_demo: PASS
+
+coverage_demo
+  instance_coverage=<tool-computed percentage>%
+  coverage_demo: PASS
+
+bind_demo
+  bind_demo: PASS
