@@ -1,0 +1,19 @@
+data_types_demo
+  header=0x14b9 word=0xcafe samples=3
+  data_types_demo: PASS
+
+four_state_demo (four-state simulator)
+  logic=x bit=0
+  four_state_demo: PASS
+
+operators_casting_demo
+  value=0xd signed=-3 ones=3
+  operators_casting_demo: PASS
+
+procedural_demo
+  q=1 after update and hold
+  procedural_demo: PASS
+
+tasks_functions_demo
+  saturating_add(250,20)=255 counter=42
+  tasks_functions_demo: PASS
