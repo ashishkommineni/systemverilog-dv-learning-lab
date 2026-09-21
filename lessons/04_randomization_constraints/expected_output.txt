@@ -1,0 +1,6 @@
+The randomized values are seed- and simulator-algorithm-dependent. The stable
+result is:
+
+error_packet channel=<0..3> opcode=4 length=<2..4> checksum=<legal sum>
+conflicting_inline_constraint: expected failure
+constraints_demo: PASS
