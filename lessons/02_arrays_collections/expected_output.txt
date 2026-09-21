@@ -1,0 +1,3 @@
+fixed_sum=20 dynamic_size=3 queue='{3, 5, 7}
+associative_entries=2 status=0xa5
+arrays_demo: PASS
