@@ -1,0 +1,4 @@
+lessons/08_mini_verification_project/counter_if.sv
+lessons/08_mini_verification_project/counter_dut.sv
+lessons/08_mini_verification_project/counter_tb_pkg.sv
+lessons/08_mini_verification_project/tb_top.sv
