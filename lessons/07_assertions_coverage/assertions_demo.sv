@@ -31,8 +31,15 @@ module assertions_demo;
   assert property (controls_are_known)
     else $fatal(1, "Handshake control contains X or Z");
 
+  // Keep the explicit sequence-delay cover point for full-featured simulators.
+  // Verilator 5.020 executes the three assertions above but does not implement
+  // ## delays inside a cover property, so the portable smoke run skips only
+  // this coverage statement. The handshake count below still proves that the
+  // antecedent and consequent occur twice during the test.
+`ifndef VERILATOR
   cover property (@(posedge clk) disable iff (!rst_n)
                   request ##1 grant);
+`endif
 
   always @(posedge clk) begin
     if (rst_n && grant)
