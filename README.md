@@ -1,5 +1,7 @@
 # SystemVerilog DV Learning Lab
 
+[![SystemVerilog smoke](https://github.com/ashishkommineni/systemverilog-dv-learning-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/ashishkommineni/systemverilog-dv-learning-lab/actions/workflows/ci.yml)
+
 A practical, example-first notebook for learning SystemVerilog as a design-verification engineer.
 
 I built this repository around one rule: every concept should answer five questions before it becomes “notes”:
