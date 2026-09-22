@@ -7,7 +7,7 @@ SystemVerilog is one language, but simulators implement different portions of th
 | Data types, functions, arrays | Run | Run |
 | Classes and polymorphism | Run | Run |
 | Interfaces and clocked RTL | Run | Run |
-| Basic concurrent assertions | Run with assertion support | Run |
+| Basic concurrent assertions | Run with assertion support; explicit `##` cover sequence excluded on Verilator 5.020 | Run |
 | Constrained randomization | Source-only in portable suite | Run |
 | Mailbox, semaphore, process control | Source-only in portable suite | Run |
 | Covergroups and coverage crosses | Source-only in portable suite | Run with coverage |
@@ -22,6 +22,11 @@ verilator --binary --timing --assert -Wall -Wno-fatal
 ~~~
 
 Each example uses a separate build directory, so top-module names and generated files cannot collide.
+The assertion lesson keeps its `request ##1 grant` cover sequence in the source
+for Xcelium and other full-featured simulators. The `VERILATOR` path omits that
+single cover statement because the stable Ubuntu package (5.020) does not
+implement sequence delays inside `cover property`; the executable assertions
+and the two-handshake end check still run.
 
 ## Cadence Xcelium
 
