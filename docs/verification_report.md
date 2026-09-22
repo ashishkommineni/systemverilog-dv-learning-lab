@@ -1,6 +1,6 @@
 # Verification report
 
-Last checked: 2026-09-21
+Last checked: 2026-09-22
 
 ## Review contract
 
@@ -20,6 +20,7 @@ That distinction prevents a common portfolio problem: presenting a hand-written 
 | SystemVerilog parse | 21 of 21 source files with Verible syntax parser | PASS |
 | Portable compile | 9 of 9 selected examples with Verilator 5.49 | PASS |
 | Portable runtime self-checks | 9 of 9 selected examples | PASS |
+| GitHub Actions portable CI | Ubuntu 24.04, Verilator 5.020, 9 of 9 examples | PASS |
 | Extended elaboration | 8 additional feature examples plus the complete mini environment | PASS; unsupported cover bins explicitly reported by Verilator |
 | Documentation links and Xcelium file list | Every local target resolved | PASS |
 | Generated-artifact scan | Logs, waves, databases, backups | PASS |
