@@ -17,6 +17,7 @@ interface counter_if(input logic clk);
   logic       enable;
   logic [7:0] value;
 
+`ifndef VERILATOR
   clocking driver_cb @(posedge clk);
     default input #1step output #0;
     output rst_n, enable;
@@ -27,15 +28,20 @@ interface counter_if(input logic clk);
     default input #1step;
     input rst_n, enable, value;
   endclocking
+`endif
 
   modport dut (
     input  clk, rst_n, enable,
     output value
   );
 
-  // Signal-direction modports remain portable across older open-source
-  // simulators. The separate Xcelium example demonstrates a modport that
-  // directly exports a clocking block.
+`ifndef VERILATOR
+  modport driver (clocking driver_cb);
+  modport monitor (clocking monitor_cb);
+`else
+  // The stable open-source smoke release does not implement a
+  // clocking-block modport. Keep that path pin-based while commercial
+  // simulators compile the clocking-block view above.
   modport driver (
     input  clk,
     output rst_n, enable,
@@ -45,6 +51,7 @@ interface counter_if(input logic clk);
   modport monitor (
     input clk, rst_n, enable, value
   );
+`endif
 endinterface
 
 module tiny_counter(counter_if.dut bus);
